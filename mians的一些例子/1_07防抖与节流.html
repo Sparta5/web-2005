@@ -1,36 +1,46 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-11-09 23:25:07
+ * @LastEditTime: 2021-12-20 11:33:09
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \web05\mians的一些例子\1_07防抖与节流.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body style="height: 2000px;">
-  <button id="btn" style="position: fixed; right: 0; bottom: 400px;">加载更多</button>
-<script>
-  canClick=true;//开关变量
-  //节流：第一次发送请求后，只要响应没回来，就不能发送第二次
-  btn.onclick=function(){
-    if(canClick){
-      canClick=false;
-      console.log("发送ajax请求，加载更多数据...");
-      setTimeout(function(){
-        console.log("加载完成！");
-        canClick=true;
-      },3000)
-    }
-  }
-  //防抖:只要不是最后一次出发，就不执行异步请求
-var timer;//undefined
-window.onscroll=function(){
-  if(timer!==undefined){
-    clearTimeout(timer);
-  }
-  timer=setTimeout(function(){
-    //当200ms内，未发生滚动是才发送请求
-    console.log("发送ajax请求，加载更多数据...")
-  },200);
-}
-</script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="height: 2000px">
+    <button id="btn" style="position: fixed; right: 0; bottom: 400px">
+      加载更多
+    </button>
+    <script>
+      canClick = true; //开关变量
+      //节流：第一次发送请求后，只要响应没回来，就不能发送第二次
+      btn.onclick = function () {
+        if (canClick) {
+          canClick = false;
+          console.log("发送ajax请求，加载更多数据...");
+          setTimeout(function () {
+            console.log("加载完成！");
+            canClick = true;
+          }, 3000);
+        }
+      };
+      //防抖:只要不是最后一次出发，就不执行异步请求
+      var timer; //undefined
+      window.onscroll = function () {
+        if (timer !== undefined) {
+          clearTimeout(timer);
+        }
+        timer = setTimeout(function () {
+          //当200ms内，未发生滚动是才发送请求
+          console.log("发送ajax请求，加载更多数据...");
+        }, 200);
+      };
+    </script>
+  </body>
 </html>

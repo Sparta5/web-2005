@@ -1,0 +1,75 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-12-20 11:18:04
+ * @LastEditTime: 2021-12-20 14:32:42
+ * @LastEditors: Please set LastEditors
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \web05\mians的一些例子\DOM\01_className.html
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>冒泡、className、style.cssText</title>
+    <style>
+      .geeks {
+        background-color: aqua;
+        overflow: hidden;
+      }
+      .geeks_content {
+        width: 50px;
+        height: 50px;
+        background-color: black;
+        /* position: absolute; */
+        margin: 50px 50px;
+        display: inline-block;
+      }
+      .geeks_bg {
+        background-color: aqua;
+      }
+      .geeks_br {
+        border: 5px solid rgb(19, 19, 16);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="change">点击黑色区域变颜色</div>
+    <div id="change2">点击蓝色区域或自己变颜色</div>
+    <!-- <svg
+      width="200"
+      height="200"
+      xmlns="http://www.w3.org/2000/svg"
+      class="geeks"
+    >
+      <a href="javaScript:;" id="gfg">
+      <circle class="geeks_content" cx="100" cy="100" r="80" stroke="red"></circle>
+      </a>
+    </svg> -->
+    <div class="geeks" style="width: 200px; height: 200px">
+      <a href="" class="geeks_content"></a>
+    </div>
+    <script>
+      var onAqua = document.getElementsByClassName("geeks")[0]; // 点击蓝色区域
+      var onBlack = document.getElementsByClassName("geeks_content")[0]; // 点击黑色区域
+      var change = document.getElementById("change");
+      var change2 = document.getElementById("change2");
+      onBlack.onclick = function (e) {
+        e.preventDefault(); // 阻止冒泡默认行为（跳转）
+        e.stopPropagation(); // 停止冒泡
+        // e.stopPropagation();
+        // e.target.preventDefault();
+        // e.stopPropagation();
+        console.log(32321, e);
+        change.className = "geeks_br";
+      };
+      onAqua.onclick = function (e) {
+        change2.className = "geeks_bg";
+      };
+      change.onclick = function (e) {
+        this.style.cssText += "background:red;";
+      };
+      change2.onclick = function (e) {
+        this.className = "geeks_br geeks_bg";
+      };
+    </script>
+  </body>
+</html>
