@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <script src="js/vue.js"></script>
-</head>
-<body>
-<div id="app">
- <input type="text" v-my-focus><button>百度一下</button>
-</div>
-<script>
-Vue.directive("my-focus",{
-  inserted(domElem){
-    domElem.focus()
-  }
-})
-var vm=new Vue({
-  el:"#app",
-  data:{
-    
-  }
-})
-</script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="js/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!--希望input文本框一加载就自动获得焦点-->
+      <input v-my-focus /><button>百度一下</button>
+    </div>
+    <script>
+      //创建一个自定义指令my-focus
+      Vue.directive("my-focus", {
+        //(当元素)插入到页面后自动执行
+        inserted(domElem) {
+          console.log(domElem);
+          //让当前带有v-my-focus指令的元素自动获得焦点
+          domElem.focus(); //复习DOM第三天HTMLDOM常用对象
+        },
+      });
+
+      new Vue({
+        el: "#app",
+      });
+    </script>
+  </body>
 </html>
