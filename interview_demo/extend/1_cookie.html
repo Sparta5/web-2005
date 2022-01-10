@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cookie</title>
+  </head>
+  <body>
+    <script>
+      var now = new Date();
+
+      now.setMonth(now.getMonth() + 5);
+
+      var expires = now.toUTCString();
+
+      document.cookie = "name=dongdong;expires=" + expires + "path=/";
+      document.cookie = "age=11;expires=" + expires + "path=/";
+
+      function getCookieItem(key) {
+        var arr = document.cookie.split(";");
+
+        for (var i = 0; i < arr.length; i++) {
+          if (arr[i].split("=")[0].trim() == key) {
+            return arr[i].split("=")[1];
+          }
+        }
+        return undefined;
+      }
+      var a = getCookieItem("age");
+      console.log(a);
+    </script>
+  </body>
+</html>
