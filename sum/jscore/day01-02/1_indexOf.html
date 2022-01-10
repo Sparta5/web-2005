@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--所有js代码都要写在一个<script>标签中-->
+  <script>
+    //请用户输入一条消息内容
+    var   msg   = prompt("请输入消息的内容");
+    // 自定义变量  输入框
+    // 可以改名    不能改名
+    //在消息中查找敏感词"我草"的位置
+    var i=msg.indexOf("我草");
+    //如果找到我草，会返回我草的我字在字符串msg中的下标位置
+    //如果没找到，才会返回-1
+    //所以，如果返回值不是-1，说明找到了我草！
+    //如果找到"我草"
+    if(i!=-1){
+      //就在网页中输出红字"发现敏感词，禁止发送"
+      //(向)网页(中)写(`一段HTML代码片段`)
+      document.write(`<h1 style="color:red">发现敏感词，禁止发送</h1>`);
+      //如果反引号`和${}不会的同学，立刻复习第一阶段模板字符串
+    }else{//否则如果没找到"我草"
+      //就在网页中输出绿字:"然哥说: 消息内容"
+      document.write(`<h1 style="color:green">然哥说: ${msg}</h1>`);
+      //如果反引号`和${}不会的同学，立刻复习第一阶段模板字符串
+    }
+  </script>
+</body>
+</html>

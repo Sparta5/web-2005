@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //高频笔试题: 替换英文句子中每个单词首字母为大写字母
+    var str="you can you up";
+    //       ↑   ↑   ↑   ↑
+    //              复习昨天PPT最后
+    str=str.replace(/\b[a-z]/ig,function(keyword){
+      //打桩: 执行了几次，形参得到什么值，返回什么结果
+      console.log(`自动调用了一次replace中的回调函数,keyword=${keyword},返回${keyword.toUpperCase()}`);
+      //keyword有可能依次拿到: y   c   y    u 
+      //将keyword本次收到的敏感词字母转为大写字母！
+      return keyword.toUpperCase();
+                  //转为   大写 字母 //复习第一阶段字符串相关函数
+    })
+                
+    console.log(str);//You Can You Up
+  </script>
+</body>
+</html>

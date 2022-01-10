@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //高频笔试题: 定义三个函数，分别可以去掉字符串开头的空字符，字符串结尾的空字符，以及同时去掉开头和结尾的空字符
+    /*       //裁剪 开头的空字符
+    function trimLeft(str){
+      //找到字符串开头的多个空字符，替换为""
+      return str.replace(/^\s+/,"");
+                      //复习昨天的PPT结尾
+    }
+           //裁剪 结尾的空字符
+    function trimRight(str){
+      return str.replace(/\s+$/,"");
+    }
+           //裁剪 开头和结尾的空字符
+    function trim(str){
+      return str.replace(/^\s+|\s+$/g,"");
+      //猫头鹰自动让正则找所有，所以猫头鹰里不用加g
+      //js中正则很懒，默认找到一个敏感词就下班了！不找了！
+      //所以js中，如果确实找到了多个敏感词要替换，必须加g
+    }*/
+    //测试: 
+    var str="     hello world   ";
+    // console.log(trimLeft(str));//"hello world   "
+    // console.log(trimRight(str));//"     hello world"
+    // console.log(trim(str));//"hello world"
+    
+    //ES5/ES6标准中，原生的js已经提供了三个去空格的函数
+    console.log(str.trimLeft());
+    console.log(str.trimRight());
+    console.log(str.trim());
+  </script>
+</body>
+</html>

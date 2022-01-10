@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2021-12-12 11:11:44
- * @LastEditTime: 2021-12-17 11:13:19
- * @LastEditors: Please set LastEditors
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: \js练习\老久武侠.js
- */
 // 导入输入工具代码,定义输入对象
 const input = require("./modules/input");
 // 定义同步自执行函数

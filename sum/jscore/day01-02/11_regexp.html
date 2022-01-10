@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //从服务器请求过来一个关键词数组，服务器端让我防守什么敏感词，我就防守什么词！
+    //服务器器说，让我防住青天、紫烟2个词
+    var arr=["青天","紫烟"];
+    //希望上边数组一改，下边的正则自动跟着变！
+    console.log(arr.join("|"));
+    //          青天|紫烟
+
+
+    //请用户输入一条消息内容
+    var msg=prompt("请输入消息的内容");
+    //在消息中查找敏感词青天或紫烟或明月的位置
+    //var i=msg.search(/arr.join("|")/);//错误
+    //因为//之中是正则表达式的地盘！即使放入js，也无效！
+    //正确: 
+    var i=msg.search(new RegExp(arr.join("|")));
+    //                          "青天|紫烟"
+    //               new RegExp("青天|紫烟")
+    //               等效于/青天|紫烟/
+    //    msg.search(/青天|紫烟/              )
+    //如果找到敏感词
+    if(i!=-1){
+      //就在网页中输出红字"发现敏感词，禁止发送"
+      document.write(`<h1 style="color:red">发现敏感词，禁止发送</h1>`);
+    }else{//否则如果没找到"我草"
+      //就在网页中输出绿字:"然哥说: 消息内容"
+      document.write(`<h1 style="color:green">然哥说: ${msg}</h1>`);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //请用户输入一条消息内容
+    var msg=prompt("请输入消息的内容");
+    //在消息中查找敏感词"我草"或者可能同音的其他词的位置
+    // var i=msg.indexOf("我草");//只能找一种敏感词，不好用
+    var i=msg.search(/([我卧]|wo)\s*([艹草槽]|cao)/i);
+    //               复习昨天的PPT
+    //如果找到我草，会返回我草的我字在字符串msg中的下标位置
+    //如果没找到，才会返回-1
+    //所以，如果返回值不是-1，说明找到了我草！
+    //如果找到"我草"
+    if(i!=-1){
+      //就在网页中输出红字"发现敏感词，禁止发送"
+      //(向)网页(中)写(`一段HTML代码片段`)
+      document.write(`<h1 style="color:red">发现敏感词，禁止发送</h1>`);
+      //如果反引号`和${}不会的同学，立刻复习第一阶段模板字符串
+    }else{//否则如果没找到"我草"
+      //就在网页中输出绿字:"然哥说: 消息内容"
+      document.write(`<h1 style="color:green">然哥说: ${msg}</h1>`);
+      //如果反引号`和${}不会的同学，立刻复习第一阶段模板字符串
+    }
+  </script>
+</body>
+</html>

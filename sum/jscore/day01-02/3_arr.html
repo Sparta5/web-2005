@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //创建一个索引数组: 元素的下标都是数字的数组
+    var arr=["亮亮","然然","东东"];
+    //        "0"    "1"    "2"
+    console.log(arr);
+    //想获取第二阶段老师然然, 2种: 
+    //var teacher2=arr["1"]; //标准写法
+    var teacher2=arr[1];//简写
+    console.log(teacher2)
+    //关联数组: 下标都是自定义字符串的数组
+    var ran=[];
+    ran["数学"]=89;
+    ran["语文"]=69;
+    ran["英语"]=91;
+    console.log(ran);
+    //想访问然然的语文成绩: 2种: 
+    var chs=ran["语文"]; //标准写法
+    //var chs=ran.语文; //简写
+    console.log(chs);
+  </script>
+</body>
+</html>

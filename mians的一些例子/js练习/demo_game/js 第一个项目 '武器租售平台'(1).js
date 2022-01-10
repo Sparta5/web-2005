@@ -1,11 +1,3 @@
-/*
- * @Author: your name
- * @Date: 2021-12-17 11:07:04
- * @LastEditTime: 2021-12-17 13:35:31
- * @LastEditors: Please set LastEditors
- * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- * @FilePath: \js练习\js 第一个项目 '武器租售平台'(1).js
- */
 //切记加注释     让自己知道我干了什么  需要什么  怎么做的
 const input = require("./modules/input");
 (async function () {
