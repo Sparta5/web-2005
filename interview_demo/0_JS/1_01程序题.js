@@ -161,5 +161,20 @@ var num = [2, 3, 4, 4, 6, 7, 8, 4, 9, 7];
 // typeof obj === "string";
 // typeof obj === "string";
 // obj.constructor === Number;
-let str = "12326465441111";
-console.log(str.search(/[4]/i));
+
+// let str = "12326465441111";
+// console.log(str.search(/[4]/i));
+
+// function count(i) {
+//   //   return i + 2;
+//   console.log(i + 2);
+// }
+// for (var i = 0; i < 10; i++) {
+//   setTimeout(count(), 1000, i);
+// }
+
+let arr1 = [4, 78, 5, 4];
+let arr2 = [9, 7, 9, 7];
+let arrRes = Object.assign(arr1, arr2);
+console.log(arr1);
+console.log(arrRes);
