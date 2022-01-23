@@ -108,7 +108,7 @@
 // console.log(combine(m, n));
 
 // @-- 数组去重
-var num = [2, 3, 4, 4, 6, 7, 8, 4, 9, 7];
+// var num = [2, 3, 4, 4, 6, 7, 8, 4, 9, 7];
 
 // const arr = [];
 // for (let i = 0; i < num.length; i++) {
@@ -173,8 +173,45 @@ var num = [2, 3, 4, 4, 6, 7, 8, 4, 9, 7];
 //   setTimeout(count(), 1000, i);
 // }
 
-let arr1 = [4, 78, 5, 4];
-let arr2 = [9, 7, 9, 7];
-let arrRes = Object.assign(arr1, arr2);
-console.log(arr1);
-console.log(arrRes);
+// let arr1 = [4, 78, 5, 4];
+// let arr2 = [9, 7, 9, 7];
+// let arrRes = Object.assign(arr1, arr2);
+// console.log(arr1);
+// console.log(arrRes);
+
+// var a = 10;
+// (function () {
+//   console.log(a);
+//   a = 5;
+//   console.log(a);
+
+//   console.log(window.a); //=
+//   var a = 20;
+//   console.log(a);
+// })();
+// console.log(a);
+
+// var obj = {
+//   2: 3,
+//   3: 4,
+//   length: 2,
+//   splice: Array.prototype.splice,
+//   push: Array.prototype.push,
+// };
+// console.log(obj);
+// console.log(obj.length);
+// obj.push(1);
+// obj.push(2);
+// console.log(obj);
+// console.log(obj.length);
+
+// var obj = [1, 2];
+// console.log(obj.valueOf());
+
+Number.prototype.add = function (n) {
+  return this.valueOf() + n;
+};
+Number.prototype.minus = function (n) {
+  return this.valueOf() - n;
+};
+console.log((5).add(3).minus(2));
