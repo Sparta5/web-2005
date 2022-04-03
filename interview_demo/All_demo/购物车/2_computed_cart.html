@@ -43,6 +43,7 @@ var vm=new Vue({
           console.log(e)
           //从自定义扩展属性中绑定的下标值，作为删除的位置
           this.cart.splice(e.target.dataset.i,1)
+          // 获取不到用这种  e.currentTarget.dataset.xxxx;
         }else{//否则，如果不是加号，则执行加减操作
           var i=e.target.dataset.i;
           this.cart[i].count+=parseInt(e.target.dataset.n);//自定义扩展dataset.n缓存的值
