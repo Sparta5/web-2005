@@ -12,7 +12,7 @@ double answer[N + 1]; // 解方案数组
 void merge_sort(int v[], int w[], double vw[], int l, int r) {
     if (l >= r) return;
 
-    int mid = l + r >> 1;
+    int mid = l + r >> 1; 
     merge_sort(v, w, vw, l, mid), merge_sort(v, w, vw, mid + 1, r);
 
     int i = l, j = mid + 1, k = 1;
@@ -126,4 +126,4 @@ int main() {
     for (i = 1; i <= N; i ++ ) printf("%.1lf ", answer[i]);
 
     return 0;
-}
+} 

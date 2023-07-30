@@ -7,10 +7,10 @@ int max(int a, int b) {
     return a > b ? a : b;
 }
 
-int main() {
+int main() {  
     int v[] = {0, 2, 4, 5, 6}; // 物品价值数组
     int w[] = {0, 1, 2, 3, 4}; // 物品重量数组
-
+ 
     int f[N + 1][W + 1] = {}; // 子问题解数组
 
     int i, j;
