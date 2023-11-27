@@ -1,4 +1,5 @@
 import * as THREE from "three";
+// 导入导轨控制器
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 // console.log(THREE)
@@ -47,7 +48,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // 使用渲染器，通过相机将场景渲染进来
-renderer.render(scene, camere);
+// renderer.render(scene, camere);
 
 // 创建轨道控制器
 const controls = new OrbitControls(camere, renderer.domElement);
@@ -55,17 +56,16 @@ const controls = new OrbitControls(camere, renderer.domElement);
 // 添加坐标轴辅助器
 const axesHelper = new THREE.AxesHelper(5);
 scene.add(axesHelper);
-
-function render(time) {
-  console.log(time);
-  // 渲染器渲染场景和相机
-  //   cube.position.x += 0.02;
-  //   cube.rotation.y += 0.01;
-  //   if (cube.position.x > 5) cube.position.x = 0;
+// 设置时钟
+const clock = new THREE.Clock();
+function render() {
+  const time=clock.getElapsedTime()
+  console.log(time,'时间运行总时长')
   let t = (time / 1000) % 5;
   cube.position.x = t;
   cube.rotation.x = t;
 
+   // 渲染器渲染场景和相机
   renderer.render(scene, camere);
   // 动画循环（浏览器内置方法）
   requestAnimationFrame(render);
